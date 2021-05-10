@@ -37,7 +37,7 @@
 
     <script type="text/javascript">
       // Your beautiful D3 code will go here
-	var margin = { top: 20, right: 20, bottom: 30, left: 40},
+	var margin = { top: 10, right: 10, bottom: 30, left: 30},
 	width = window.innerWidth*2/3,
 	height = window.innerHeight*2/3,
 	fontSize = 15;
@@ -102,7 +102,7 @@
 		   .append("text")
 		   .text(function(d){return d['頻率']})
 		   .attr("x", function(d,i) {
-				return i * (width / 28) + 5;
+				return i * (width / 28) + 10;
                 //return xscale(d['組界'] + (xscale.bandwidth())/2 - fontSize/2)
              })
 		   .attr("y", function(d){
