@@ -48,14 +48,7 @@
 				.attr("height", height + margin.top +margin.bottom)
 				.append("g")
 				.attr("transform" ,"translate(" + margin.left +"," + margin.top + ")");
-	svg.append('text')
-		.attr('x',-300)
-		.attr("y", -20)
-		.attr("transform", "rotate(-90)")
-		.attr("text-anchor", "middle")
-		.attr("font-size", "20px")
-		.attr("fill", "purple")
-		.text('組界')
+	
 
     d3.csv("./data.csv", function(error, data){
 		if(error) throw error;
@@ -100,18 +93,19 @@
 		   .data(data)
 		   .enter()
 		   .append("text")
-		   .text(function(d){return d['頻率']})
-		   .attr("x", function(d,i) {
-				return i * (width / 28) + 10;
-                //return xscale(d['組界'] + (xscale.bandwidth())/2 - fontSize/2)
+		   .text(function(d){return d.頻率})
+		   .attr("x", function(d) {
+				//return i * (width / 28)+10;
+                return xscale(d['組界']) + (xscale.bandwidth())/2 - fontSize/2
              })
 		   .attr("y", function(d){
-				if(d['頻率'] == 0){
-                    return height - (d['頻率'] * 15);
-                 }
-                 else{
-                    return height - (d['頻率'] * 15) + 15;
-                 }      
+				// if(d['頻率'] == 0){
+                //     return height - (d['頻率'] * 15);
+                //  }
+                //  else{
+                //     return height - (d['頻率'] * 15) + 15;
+                //  }    
+				return height -fontSize/2
 		   })
 		   .attr("font-family", "Noto Sans TC")
 		   .attr("font-size", "15px")
@@ -133,6 +127,15 @@
             .selectAll("text")
             .transition()
             .attr("transform", "rotate(36)");
+		
+		svg.append('text')
+		.attr('x',-300)
+		.attr("y", -20)
+		.attr("transform", "rotate(-90)")
+		.attr("text-anchor", "middle")
+		.attr("font-size", "20px")
+		.attr("fill", "purple")
+		.text('組界')
 
 			// svg.selectAll("rect")
             //     .transition()
