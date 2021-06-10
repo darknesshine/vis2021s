@@ -1,14 +1,943 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>D3 Page Template</title>
+    <title>Lab 8</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
+
+        h1, div {
+          background-color: rgba(255, 255, 0, 0.1);
+          font-family: 'Noto Serif JP', serif;
+          font-size: 24pt;
+          border: solid 1px black;
+          width: 90%;
+          margin: 5px auto;
+          padding: 10px;
+        }
+
+        div {
+          font-size: 12pt;
+        }
+        
+        body {
+            background-color: rgba(255, 128, 255, 0.1);
+        }
+
+        video:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+        .svgline {
+          background-color: rgba(240, 0, 240, 0.562);
+        }
+        /*蕭*/
+        #path930 {
+        stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash930 5s linear forwards;
+        }
+
+        @keyframes dash930{
+          0%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          5.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+        #path932 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash932 5s linear forwards;
+        }
+
+        @keyframes dash932{
+          0%,
+          5.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          11%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path934 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash934 5s linear forwards;
+        }
+
+        @keyframes dash934{
+          0%,
+          11%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          16.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path940 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash940 5s linear forwards;
+        }
+
+        @keyframes dash940{
+          0%,
+          16.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          22%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path942 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash942 5s linear forwards;
+        }
+
+        @keyframes dash942{
+          0%,
+          22%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          27.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path944 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash944 5s linear forwards;
+        }
+
+        @keyframes dash944{
+          0%,
+          27.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          33%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path946 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash946 5s linear forwards;
+        }
+
+        @keyframes dash946{
+          0%,
+          33%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          38.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path948 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash948 5s linear forwards;
+        }
+
+        @keyframes dash948{
+          0%,
+          38.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          44%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path950 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash950 5s linear forwards;
+        }
+
+        @keyframes dash950{
+          0%,
+          44%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          49.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path952 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash952 5s linear forwards;
+        }
+
+        @keyframes dash952{
+          0%,
+          49.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          55%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+        
+         #path954 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash954 5s linear forwards;
+        }
+
+        @keyframes dash954{
+          0%,
+          55%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          60.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path956 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash956 5s linear forwards;
+        }
+
+        @keyframes dash956{
+          0%,
+          60.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          66%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path958 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash958 5s linear forwards;
+        }
+
+        @keyframes dash958{
+          0%,
+          66%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          71.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path960 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash960 5s linear forwards;
+        }
+
+        @keyframes dash960{
+          0%,
+          71.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          77%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path962 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash962 5s linear forwards;
+        }
+
+        @keyframes dash962{
+          0%,
+          77%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          82.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path964 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash964 5s linear forwards;
+        }
+
+        @keyframes dash964{
+          0%,
+          82.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          88%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path966 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash966 5s linear forwards;
+        }
+
+        @keyframes dash966{
+          0%,
+          88%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          93.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path968 {
+          stroke-width: 12;
+        clip-path: url("#xiao");
+        stroke-dasharray: 232;
+        animation: dash968 5s linear forwards;
+        }
+
+        @keyframes dash968{
+          0%,
+          93.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          100%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+        /*禾*/
+         #path1043 {
+          stroke-width: 12;
+        clip-path: url("#he");
+        stroke-dasharray: 232;
+        animation: dash1043 5s linear forwards;
+        }
+
+        @keyframes dash1043{
+          0%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          20%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path1045 {
+          stroke-width: 12;
+        clip-path: url("#he");
+        stroke-dasharray: 232;
+        animation: dash1045 5s linear forwards;
+        }
+
+        @keyframes dash1045{
+          0%,
+          20%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          40%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path1047 {
+          stroke-width: 12;
+        clip-path: url("#he");
+        stroke-dasharray: 232;
+        animation: dash1047 5s linear forwards;
+        }
+
+        @keyframes dash1047{
+          0%,
+          40%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          60%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path1049 {
+          stroke-width: 12;
+        clip-path: url("#he");
+        stroke-dasharray: 232;
+        animation: dash1049 5s linear forwards;
+        }
+
+        @keyframes dash1049{
+          0%,
+          60%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          80%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path1051 {
+          stroke-width: 12;
+        clip-path: url("#he");
+        stroke-dasharray: 232;
+        animation: dash1051 5s linear forwards;
+        }
+
+        @keyframes dash1051{
+          0%,
+          80%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          100%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+        /*群*/
+         #path1384 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1384 5s linear forwards;
+        }
+
+        @keyframes dash1384{
+          0%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          8.3%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+         #path1386 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1386 5s linear forwards;
+        }
+
+        @keyframes dash1386{
+          0%,
+          8.3%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          16.6%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1388 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1388 5s linear forwards;
+        }
+
+        @keyframes dash1388{
+          0%,
+          16.6%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          24.9%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1390 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1390 5s linear forwards;
+        }
+
+        @keyframes dash1390{
+          0%,
+          24.9%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          33.2%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1392 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1392 5s linear forwards;
+        }
+
+        @keyframes dash1392{
+          0%,
+          33.2%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          41.5%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1396 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1396 5s linear forwards;
+        }
+
+        @keyframes dash1396{
+          0%,
+          41.5%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          49.8%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1398 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1398 5s linear forwards;
+        }
+
+        @keyframes dash1398{
+          0%,
+          49.8%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          58.1%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1400 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1400 5s linear forwards;
+        }
+
+        @keyframes dash1400{
+          0%,
+          58.1%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          66.4%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1402 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1402 5s linear forwards;
+        }
+
+        @keyframes dash1402{
+          0%,
+          66.4%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          74.7%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1404 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1404 5s linear forwards;
+        }
+
+        @keyframes dash1404{
+          0%,
+          74.7%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          83%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1406 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1406 5s linear forwards;
+        }
+
+        @keyframes dash1406{
+          0%,
+          83%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          91.3%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+        #path1408 {
+          stroke-width: 12;
+        clip-path: url("#qun");
+        stroke-dasharray: 232;
+        animation: dash1408 5s linear forwards;
+        }
+
+        @keyframes dash1408{
+          0%,
+          91.3%{
+            stroke-dashoffset: 232; /*begin*/
+          }
+          100%{
+            stroke-dashoffset: 0;   /*end*/
+          }
+        }
+
+
+
+    </style>
     <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
 </head>
 <body>
+    <h1>
+        lab08 漢字書寫 (鉛筆字) (毛筆字也OK!) Path Animation
+    </h1>
+    <div>
+      限定使用 D3.js，參考以下影片。
+    	<ul>
+    		<li><a href="https://bl.ocks.org/basilesimon/f164aec5758d16d51d248e41af5428e4">Animate path in D3</a></li>
+    		<li><a href="https://codepen.io/MyXoToD/post/howto-self-drawing-svg-animation">"Self-Drawing" SVG</a></li>
+    		<li><a href="https://stackoverflow.com/questions/15275362/how-to-transition-a-path-in-d3-js">How to transition a path in d3.js</a></li>
+        <li><a href="https://css-tricks.com/svg-line-animation-works/">How SVG Line Animation Works</a></li>
+        <li><a href="http://blog.roachking.net/blog/2014/10/31/osolve-team-drawing-animation/">使用 SVG 將圖片做成動畫</a></li>
+        <li><a href="https://www.hesyifei.com/">何一非</a></li>
+    	</ul>
+    </div>
+
+    <div>
+  		<video width="400" controls loop autoplay>
+  		  <source src="3.mp4" type="video/mp4">
+  		</video>
+    </div>
+
+    <div>
+      展示區 (姓名)
+      <hr>
+      <img width="256" src="./uni856D_FZSJSK--GBK1-0.svg">
+      <img width="256" src="./uni79BE_FZSJSK--GBK1-0.svg">
+      <img width="256" src="./uni7FA4_FZSJSK--GBK1-0.svg">
+    </div>
+
+    <div>
+      Drag and Drop 展示區 (接收任何SVG)
+    </div>
+    
+
+    <div >
+      <svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.1"  width="532" height="512" viewBox="-10 0 266 256">
+        <clipPath id="xiao">
+          <path fill="none"
+          d="M94 19q12 9 16 14q4 -1 13 -3q12 -3 25 -7q16 -21 11 -32q-1 -2 0 -2t4 1q12 9 8 14q-2 3 -5 9q-2 3 -3 6q13 -3 17 -6q3 -2 7 -2q9 2 15 3q2 1 1 4q0 2 -2 1q-9 -1 -17 1l-9 3q-11 2 -16 3q-16 18 -28 25q1 3 1 9q5 0 11 -1q9 -2 12 -2q7 -1 10 0q0 2 5 5q4 3 5 4
+          q1 2 1 4q-1 2 -3 1q-6 1 -9 5q38 -5 42 -8q4 -2 8 -1q7 3 15 5q1 1 1 2q-1 4 -11 3q-11 -1 -35 8q-7 2 -2 -2q9 -3 14 -6q4 -3 -1 -2q-18 4 -34 5q-14 16 -34 23v4q16 -4 15 -8q0 -1 2 -2l18 2q2 0 2 1q0 2 -9 4q-10 2 -29 10q0 33 -1 40q9 -1 15 -3q0 -4 6 -4q1 1 2 1h6
+          q2 1 1 3q0 2 -2 2q-7 0 -28 5q-2 17 -2 28q0 12 1 18q-1 16 4 26q2 2 -2 4q-5 2 -6 -4q-4 -11 -4 -19q0 -2 2 -4q1 -1 2 -1v-26v-21q-6 2 -16 5q-6 2 -8 2q-3 2 -3 1l1 -5l1 -1q1 0 2 -1q2 1 6 0q2 0 3 -1q7 -1 15 -5v-13t1 -26q-12 5 -9 1q2 -1 -2 -1q-10 3 -24 4
+          q-4 0 -1 -2q15 -1 36 -9q1 -2 1 -4q-3 1 -6 1h-1q-3 -1 0 -2q1 1 3 -1q2 -1 4 -1v-7t1 -8q-29 5 -60 14q-15 6 -27 1q-4 0 0 -1q6 1 18 -2l4 -2q22 -5 58 -13q4 -1 7 -2q-1 -6 1 -13q-2 1 -5 1q-13 3 -18 1q-3 0 1 -2q4 0 12 -3q6 -2 10 -3v-8q-3 2 -6 3q-6 3 -2 -1
+          q1 -1 4 -3q2 -1 4 -3q0 -1 -2 -3v-2q-1 -2 1 -1l2 2t3 1q5 -5 15 -18q-8 3 -31 10q2 3 4 8q1 8 -8 4q-3 0 -6 -8v-1q-16 4 -28 0q-2 -1 2 -2h3q6 -1 21 -5q-2 -7 -8 -15q-1 -2 1 -1zM142 210q-4 -10 -1 -13q2 -3 1 -21q0 -7 -4 -11q-4 -2 1 -1q1 0 3 1q2 0 7 -1q3 -1 5 -1
+          q1 -1 7 -3h3q4 -1 7 -1h1q-1 -5 -1 -12q-1 -7 -1 -13q-23 3 -30 7q-1 1 -3 1q-2 2 -4 -4q-1 -1 4 -2q0 -1 2 -3q1 -1 2 -3q7 -10 2 -16q-2 -3 1 -2t6 5q3 5 -1 8q-1 2 -3 3q-3 4 -4 7h3l12 -2q-1 -3 4 -3h9v-19q0 -5 -3 -10q-2 -2 1 -1q8 5 11 9q3 3 1 5q-1 1 -1 2
+          q-3 4 -3 14q1 0 1 1t-1 2q-1 21 2 57q0 7 1 10q2 14 9 25l1 1q4 5 5 9q1 2 -3 4q-4 1 -7 -8q-11 -17 -18 -21q-2 -2 -1 -6q1 -2 7 0h3t1 -1q-3 -22 -4 -36v-4h-1l-8 2q-5 1 -8 1q-4 2 -7 2q3 1 0 6q-2 3 -3 15q0 14 2 20q-2 2 -5 1zM98 178q-11 3 -18 2q-4 42 -34 54
+          q-8 2 -2 -2q33 -14 33 -80q2 -20 -5 -25q0 -1 2 -1q12 8 10 9q-3 7 -2 14q3 1 18 -5q3 -12 3 -14q0 -4 -2 -7q-3 -2 0 -1q0 1 1 1q3 1 6 3q4 2 0 7q-2 2 -3 7l-1 3h3h6q2 2 2 3q-13 2 -27 6q-2 1 -3 1q-3 1 -4 0q0 5 -1 13v11q6 0 19 -3q2 -3 5 -3q8 4 5 7q-3 2 -3 4
+          q-2 12 -2 20q0 9 -1 14q-1 2 -2 1q-4 -5 -5 -9q-2 -4 2 -4q3 0 3 -21q0 -6 -3 -5zM161 66q0 -3 -1 -4q0 -1 -4 -1q-11 1 -25 5q-1 4 -1 7q-1 4 -1 7q11 -1 26 -3q4 -6 6 -11zM152 81q-12 2 -23 4q0 2 -1 6v7q13 -5 24 -17z" 
+          style="fill:none;stroke:#f50000;stroke-opacity:1" />
+        </clipPath>
+
+
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 69.692308,46.461538 206,9.2307692"
+          id="path930" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 90,13.846154 119,57"
+          id="path932" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 170.30769,-11.692308 143.53846,38.461538 112.46154,60.307692"
+          id="path934" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 93.38462,70.461538 81.84615,-16 -30.15385,36.307693 -35.6923,16.615389"
+          id="path940" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 29.384615,104.61538 229.38462,65.538462 173.69231,88.307692"
+          id="path942" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 128.76923,39.076923 -7.38461,182.769227 8.30769,18.46154"
+          id="path944" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 108,126 -7.23077,26.61538"
+          id="path946" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 115,146 -44.692308,5.07692"
+          id="path948" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 80.153846,124 -4.307692,72.61538 -17.230769,28.92308 -23.076923,12"
+          id="path950" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 71.846154,178.15385 43.076926,-3.38462"
+          id="path952" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 104,171 -4.76923,55.15385"
+          id="path954" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 78.307692,117.23077 146,104.30769 158.61538,93.538462"
+          id="path956" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 151.84615,109.53846 -19.6923,36.61539"
+          id="path958" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 133,138 49.92308,-6.92308"
+          id="path960" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 174.61538,100.61538 3.07693,111.69231 19.69231,30.15385"
+          id="path962" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 179.23077,161.84615 -47.07692,5.84616"
+          id="path964" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 143.53846,158.15385 -0.61538,59.38461"
+          id="path966" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 87.230769,164.61538 161.69231,148"
+          id="path968" />
+      </svg>
+
+    </div>
+
+    <div style="width: 30%;display: inline-block;">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="532"
+        height="512" viewBox="-10 0 266 256">
+        <clipPath id="he">
+          <path fill="none" d="M151 8q1 2 3 5t4 4q4 6 -2 7q-6 0 -16 5q-40 20 -61 24q-5 1 0 -2q34 -11 62 -29q7 -5 6 -13q0 -1 1 -2q1 0 3 1zM124 85q17 -3 38 -6q1 0 2 -1q6 -1 9 -5q1 -4 8 -2q6 1 16 6q2 2 1 5q-2 3 -4 1q-11 -4 -23 -3t-47 8v6q6 3 2 7q24 36 60 74q2 4 14 3q23 -3 47 4
+          q5 3 -1 2q-23 -3 -45 1q-12 3 -17 -7q-35 -40 -60 -73q-1 36 0 70q2 31 6 50q0 3 -1 4q-2 2 -4 0q-27 -27 -31 -39q-4 -6 2 -1q7 10 23 19q3 1 4 1q1 -1 1 -3q-1 -14 -2 -44q0 -26 -1 -48q-1 -4 -2 -5t-3 1q-27 39 -68 61q-8 5 -1 -2q44 -28 71 -71q-3 -2 -3 -3h4v-5
+          q-25 6 -45 13q-8 4 -19 2q-5 0 0 -2q9 -1 64 -17q-1 -13 -2 -24q-1 -10 -2 -17q-2 -5 2 -2q11 16 9 16q-1 2 -1 5q-2 12 -1 21z"
+          style="fill:none;stroke:#f60000;stroke-opacity:1"/>
+        </clipPath>
+
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 164.04203,12.341162 109.61434,41.453646 69.742892,55.377009"
+          id="path1043" />
+         <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 46.959209,107.27318 133.854141,-29.745368 23.733,4.430161"
+          id="path1045" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 122.90482,39.555006 123.5377,223.09023 89.045735,183.21879"
+          id="path1047" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 124,94 38.731768,178.15575"
+          id="path1049" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 124,94 67.57231,88.90235 62.33869,0.63288"
+          id="path1051" />
+      </svg>
+
+    </div>  
+
+    <div style="width: 30%;display: inline-block;">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="532"
+        height="512" viewBox="-1 0 266 256">
+        <clipPath id="qun">
+          <path
+          fill="none"
+          d="M199 19q2 -3 11 5q4 4 -2 8q-4 2 -14 11q-15 14 -46 37q3 0 9 -2q10 -2 20 -5q7 -2 7 -5q0 -4 5 -4q12 -1 17 1q4 6 -2 7q-5 0 -12 3q-4 3 -17 9q-9 4 -15 7q11 5 7 9q-2 2 -2 4q1 0 3 -1q5 -2 8 -5q4 -3 18 -2q4 4 -1 7q-8 -1 -28 9v23q5 -1 17 -3q6 0 8 -1q6 -1 9 -5 q1 -4 11 -1q16 5 26 11q1 4 -3 6q-11 -2 -17 -6q-6 -3 -12 -3q-14 1 -39 6q-1 33 2 66q1 8 2 13q6 5 11 12q3 7 -6 9q-8 -4 -11 -10l-8 -10q-5 -10 8 -14q-1 -13 -3 -38q-2 -17 -2 -26q-13 2 -23 6q-8 5 -19 1q-1 5 -10 4q-10 0 -24 4q0 2 4 5q2 3 1 4q-2 1 -5 0 q-15 -5 -14 -10q-2 -4 3 -7q-1 -1 -1 -4l-3 -12q-18 59 -43 100q-6 5 -2 -1q33 -67 47 -131q-8 3 -21 10q-6 4 -19 2q-3 1 0 -1q24 -10 41 -17q2 -7 5 -22q-12 4 -23 9q-5 2 -11 4q-10 4 -24 2q-3 0 -3 -1t3 -2q16 -3 49 -13q7 -3 10 -4q1 -10 -4 -15q-2 -4 4 -4q6 2 12 5 q4 5 1 7q-2 2 -2 3q2 0 7 -2q5 -1 8 -2l3 -15q0 -2 1 -3q0 -2 -2 -2q-1 -1 -3 0q-34 13 -53 6q-3 -1 0 -2q33 -1 51 -11q6 -5 12 -1q3 3 8 6q3 3 5 3q2 3 2 5t-3 2q-8 3 -10 9q15 -6 22 -3q7 -6 8 -17q0 -2 1 -2q2 -1 3 1v5l1 3q0 3 1 3q2 0 5 -3q21 -15 33 -18q5 0 12 -6z M188 27q-39 21 -43 37q-4 6 -7 1q-1 -1 -2 -3t-1 -4q-3 1 -7 1q-12 1 -17 3q-2 2 -3 4q-8 14 -14 20q16 -4 20 -1q1 4 -3 5q-18 1 -33 8q-3 3 -9 25q1 3 3 7q17 -5 30 -11q6 -5 19 6q4 4 -1 7q-8 3 -15 13q7 0 11 1q3 0 5 -1q24 -7 36 -9q0 -3 -1 -13v-9q-11 5 -28 4 q-2 0 -2 -1t2 -2q15 -3 27 -8q-1 -3 -1 -6q-1 -5 -1 -7q-1 -3 -4 -4q-2 0 -3 -1v-1q-15 6 -27 6q-3 0 -3 -1t3 -2q12 -4 27 -16q19 -16 46 -44q2 -2 1 -4q-2 -2 -5 0zM100 64q-4 2 -8 3q-5 1 -8 2q-2 4 -4 13q-2 7 -2 10q12 -3 22 -28zM170 79q-5 2 -13 5q-4 2 -8 3q1 1 4 2 q2 1 4 1q2 -2 8 -5q4 -2 6 -4q3 -3 -1 -2zM103 123q-17 9 -31 10q4 14 8 20q4 -2 14 -5q1 0 3 -1q10 -13 12 -19q-1 -6 -6 -5z"
+          id="path1070"
+          style="fill:none;stroke:#ec0000;stroke-opacity:1" />
+        </clipPath>
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 41.384615,47.692308 119.53846,30.153846 85.076923,100"
+          id="path1384" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 24.153846,118.46154 85.692308,92 121.69231,84"
+          id="path1386" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 9.692308,90.461538 142.30769,51.692308"
+          id="path1388" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 87.230769,46.461538 56.153846,157.84615 18.923077,239.38462"
+          id="path1390" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 69,123 9.923077,45.92308"
+          id="path1392" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 72,133 36.15385,-13.61538 6.76923,6.76923 L 96.46154,156"
+          id="path1396" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 74.307692,157.23077 121,145"
+          id="path1398" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 145.38462,21.538462 -3.07693,30.153846 68.30769,-33.846154 -91.38461,85.846156"
+          id="path1400" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 138.92308,84.307692 196.76923,68 146,97.538462"
+          id="path1402" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 121.07692,117.84615 201.69231,97.230769"
+          id="path1404" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 116,148 91.23077,-20.92308 32.61538,13.84616"
+          id="path1406" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 157,90 162.61538,219.38462 182,238.46154"
+          id="path1408" />
+
+      </svg>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       // Your beautiful D3 code will go here
+    var path1 = document.querySelector('#path930');
+    var path2 = document.querySelector('#path932');
+    var path3 = document.querySelector('#path934');
+    var path4 = document.querySelector('#path940');
+    var path5 = document.querySelector('#path942');
+    var path6 = document.querySelector('#path944');
+    var path7 = document.querySelector('#path946');
+    var path8 = document.querySelector('#path948');
+    var path9 = document.querySelector('#path950');
+    var path10 = document.querySelector('#path952');
+    var path11 = document.querySelector('#path954');
+    var path12 = document.querySelector('#path956');
+    var path13 = document.querySelector('#path958');
+    var path14 = document.querySelector('#path960');
+    var path15 = document.querySelector('#path962');
+    var path16 = document.querySelector('#path964');
+    var path17 = document.querySelector('#path966');
+    var path17 = document.querySelector('#path968');
+
+    var length1 = parseInt(path1.getTotalLength());
+    var length2 = parseInt(path2.getTotalLength());
+    var length3 = parseInt(path3.getTotalLength());
+    var length4 = parseInt(path4.getTotalLength());
+    var length5 = parseInt(path5.getTotalLength());
+    var length6 = parseInt(path6.getTotalLength());
+    var length7 = parseInt(path7.getTotalLength());
+    var length8 = parseInt(path8.getTotalLength());
+    var length9 = parseInt(path9.getTotalLength());
+    var length10 = parseInt(path10.getTotalLength());
+    var length11 = parseInt(path11.getTotalLength());
+    var length12 = parseInt(path12.getTotalLength());
+    var length13 = parseInt(path13.getTotalLength());
+    var length14 = parseInt(path14.getTotalLength());
+    var length15 = parseInt(path15.getTotalLength());
+    var length16 = parseInt(path16.getTotalLength());
+    var length17 = parseInt(path17.getTotalLength());
+    var length18 = parseInt(path18.getTotalLength());
+
+    //---
+
+    var he1 = document.querySelector('#path1043');
+    var he2 = document.querySelector('#path1043');
+    var he3 = document.querySelector('#path1043');
+    var he4 = document.querySelector('#path1043');
+    var he5 = document.querySelector('#path1043');
+
+    var helength1 = parseInt(he1.getTotalLength());
+    var helength2 = parseInt(he2.getTotalLength());
+    var helength3 = parseInt(he3.getTotalLength());
+    var helength4 = parseInt(he4.getTotalLength());
+    var helength5 = parseInt(he5.getTotalLength());
+
+    //---
+
+    var qun1 = document.querySelector('#path1384');
+    var qun2 = document.querySelector('#path1386');
+    var qun3 = document.querySelector('#path1388');
+    var qun4 = document.querySelector('#path1390');
+    var qun5 = document.querySelector('#path1392');
+    var qun6 = document.querySelector('#path1396');
+    var qun7 = document.querySelector('#path1398');
+    var qun8 = document.querySelector('#path1400');
+    var qun9 = document.querySelector('#path1402');
+    var qun10 = document.querySelector('#path1404');
+    var qun11 = document.querySelector('#path1406');
+    var qun12 = document.querySelector('#path1408');
+
+    var qunlength1 = parseInt(qun1.getTotalLength());
+    var qunlength2 = parseInt(qun2.getTotalLength());
+    var qunlength3 = parseInt(qun3.getTotalLength());
+    var qunlength4 = parseInt(qun4.getTotalLength());
+    var qunlength5 = parseInt(qun5.getTotalLength());
+    var qunlength6 = parseInt(qun6.getTotalLength());
+    var qunlength7 = parseInt(qun7.getTotalLength());
+    var qunlength8 = parseInt(qun8.getTotalLength());
+    var qunlength9 = parseInt(qun9.getTotalLength());
+    var qunlength10 = parseInt(qun10.getTotalLength());
+    var qunlength11 = parseInt(qun11.getTotalLength());
+    var qunlength12 = parseInt(qun12.getTotalLength());
+
+
+      
     </script>
-  </body>
-</html>
+  </html>
   
